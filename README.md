@@ -5,7 +5,7 @@ Written by Greg Glockner
 
 ## Description
 This is a simple Python interface to the [Tesla JSON
-API](http://docs.timdorr.apiary.io/). With this, you can query your
+API](https://tesla-api.timdorr.com/). With this, you can query your
 vehicle, control charge settings, turn on the air conditioning, and
 more.  You can also embed this into other programs to automate these
 controls.
@@ -56,12 +56,12 @@ All standard dictionary methods are supported.
 `Vehicle.data_request(name)`: Retrieve data values specified by _name_, such
 as _charge\_state_, _climate\_state_, _vehicle\_state_. Returns a
 dictionary (_dict_).  For a full list of _name_ values, see the _GET_
-commands in the [Tesla JSON API](http://docs.timdorr.apiary.io/).
+commands in the [Tesla JSON API](https://tesla-api.timdorr.com/).
 
 `Vehicle.command(name)`: Execute the command specified by _name_, such
 as _charge\_port\_door\_open_, _charge\_max\_range_. Returns a
 dictionary (_dict_).  For a full list of  _name_ values, see the _POST_ commands
-in the [Tesla JSON API](http://docs.timdorr.apiary.io/).
+in the [Tesla JSON API](https://tesla-api.timdorr.com/).
 
 ## Example
 	import teslajson
