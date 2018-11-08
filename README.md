@@ -65,20 +65,24 @@ dictionary (_dict_).  For a full list of  _name_ values, see the _POST_ commands
 in the [Tesla JSON API](https://tesla-api.timdorr.com/).
 
 ## Example
-	import teslajson
-	c = teslajson.Connection('youremail', 'yourpassword')
-	v = c.vehicles[0]
-	v.wake_up()
-	v.data_request('charge_state')
-	v.command('charge_start')
+```
+import teslajson
+c = teslajson.Connection('youremail', 'yourpassword')
+v = c.vehicles[0]
+v.wake_up()
+v.data_request('charge_state')
+v.command('charge_start')
+```
 
 ## tesla_client Example
-        import teslajson
-	c = teslajson.Connection('youremail', 'yourpassword', tesla_client='{"v1": {"id": "e4a9949fcfa04068f59abb5a658f2bac0a3428e4652315490b659d5ab3f35a9e", "secret": "c75f14bbadc8bee3a7594412c31416f8300256d7668ea7e6e7f06727bfb9d220", "baseurl": "https://owner-api.teslamotors.com", "api": "/api/1/"}}')
-        v = c.vehicles[0]
-        v.wake_up()
-        v.data_request('charge_state')
-        v.command('charge_start')
+```
+import teslajson
+c = teslajson.Connection('youremail', 'yourpassword', tesla_client='{"v1": {"id": "e4a9949fcfa04068f59abb5a658f2bac0a3428e4652315490b659d5ab3f35a9e", "secret": "c75f14bbadc8bee3a7594412c31416f8300256d7668ea7e6e7f06727bfb9d220", "baseurl": "https://owner-api.teslamotors.com", "api": "/api/1/"}}')
+v = c.vehicles[0]
+v.wake_up()
+v.data_request('charge_state')
+v.command('charge_start')
+```
 
 ## Credits
 Many thanks to [Tim Dorr](http://timdorr.com) for documenting the Tesla JSON API.
