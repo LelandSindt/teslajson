@@ -34,7 +34,8 @@ class Connection(object):
             access_token='',
             proxy_url = '',
             proxy_user = '',
-            proxy_password = ''):
+            proxy_password = '',
+            tesla_client = ''):
         """Initialize connection object
         
         Sets the vehicles field, a list of Vehicle objects
@@ -49,11 +50,15 @@ class Connection(object):
         proxy_url: URL for proxy server
         proxy_user: username for proxy server
         proxy_password: password for proxy server
+        tesla_client: json string (see README.md)
         """
         self.proxy_url = proxy_url
         self.proxy_user = proxy_user
         self.proxy_password = proxy_password
-        tesla_client = self.__open("/raw/0a8e0xTJ", baseurl="http://pastebin.com")
+        if tesla_client == '':
+          tesla_client = self.__open("/raw/0a8e0xTJ", baseurl="http://pastebin.com")
+        else:
+          tesla_client = json.loads(tesla_client)
         current_client = tesla_client['v1']
         self.baseurl = current_client['baseurl']
         if not self.baseurl.startswith('https:') or not self.baseurl.endswith(('.teslamotors.com','.tesla.com')):

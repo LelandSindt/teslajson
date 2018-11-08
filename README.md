@@ -41,6 +41,7 @@ Optional parameters:
 - _proxy\_url_: URL for proxy server
 - _proxy\_user_: username for proxy server
 - _proxy\_password_: password for proxy server
+- _tesla\_client_: JSON string alternative to pull from [pastebin](https://github.com/gglockner/teslajson/issues/7)
 
 
 `Connection.vehicles`: A list of Vehicle objects, corresponding to the
@@ -70,6 +71,14 @@ in the [Tesla JSON API](https://tesla-api.timdorr.com/).
 	v.wake_up()
 	v.data_request('charge_state')
 	v.command('charge_start')
+
+## tesla_client Example
+        import teslajson
+	c = teslajson.Connection('youremail', 'yourpassword', tesla_client='{"v1": {"id": "e4a9949fcfa04068f59abb5a658f2bac0a3428e4652315490b659d5ab3f35a9e", "secret": "c75f14bbadc8bee3a7594412c31416f8300256d7668ea7e6e7f06727bfb9d220", "baseurl": "https://owner-api.teslamotors.com", "api": "/api/1/"}}')
+        v = c.vehicles[0]
+        v.wake_up()
+        v.data_request('charge_state')
+        v.command('charge_start')
 
 ## Credits
 Many thanks to [Tim Dorr](http://timdorr.com) for documenting the Tesla JSON API.
